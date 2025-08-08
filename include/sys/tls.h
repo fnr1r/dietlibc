@@ -75,6 +75,10 @@ int arch_prctl(unsigned int what, void* where);
 
 #define __ABI_TLS_REGISTER	"w0"
 
+#elif defined(__mips__)
+
+int set_thread_area(unsigned long);
+
 #else
 
 #warning "need proper sys/tls.h for this platform"

@@ -41,7 +41,7 @@ extern int __modern_linux;
 #elif defined(__alpha__) || defined(__s390__)
   __builtin_set_thread_pointer(mainthread);
 #elif defined(__mips__)
-  set_thread_area((char*)(void *)mainthread);
+  set_thread_area((unsigned long)(void *)mainthread);
 #elif defined(__aarch64__)
   asm volatile ("msr tpidr_el0, %0" :: "r"(mainthread));
 #elif defined(__arm__)
