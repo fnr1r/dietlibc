@@ -58,7 +58,7 @@ __start:
 #ifdef WANT_CTOR
 /* FIXME: dl_init parameter ??? */
 #endif
-	PTR_LA	$25, CALL_IN_STARTCODE
+	PTR_LA	$25, CALL_IN_STARTCODE /* segfault here */
 	PTR_ADD	$a2, $a2, $a1
 	PTR_SW	$a2, environ
 	jalr	$25
