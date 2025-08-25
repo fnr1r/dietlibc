@@ -20,6 +20,8 @@ __start:
 	nop
 0:	.cpload	$31
 	.set reorder
+	/* NOTE: gp remains NULL here */
+	/* this is a bug */
 #else
 	/* _gp is provided by the linker and points into the middle of the
 	 * "small data" section (.sdata and .sbss) allocated by the
