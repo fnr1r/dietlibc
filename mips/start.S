@@ -16,12 +16,14 @@ __start:
 #ifdef __pic__
 /* initialize gp pointer */
 	.set noreorder
-	bltzal $0,0f
+	bal	__start2
 	nop
-0:	.cpload	$31
+_start_data:
+	.gpdword _start_data
+__start2:
+	PTR_LW	$gp, 0($ra)
+	PTR_SUB	$gp, $ra, $gp
 	.set reorder
-	/* NOTE: gp remains NULL here */
-	/* this is a bug */
 #else
 	/* _gp is provided by the linker and points into the middle of the
 	 * "small data" section (.sdata and .sbss) allocated by the

@@ -11,6 +11,7 @@
 #define PTR_LW    ld
 #define PTR_SLL   dsll
 #define PTR_ADD   dadd
+#define PTR_SUB   dsub
 
 #else
 
@@ -21,6 +22,7 @@
 #define PTR_LW    lw
 #define PTR_SLL   sll
 #define PTR_ADD   add
+#define PTR_SUB   sub
 
 #endif
 #endif /* __ASSEMBLER__ */
